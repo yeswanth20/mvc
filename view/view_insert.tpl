@@ -1,10 +1,10 @@
-<html>
-	<body>
-		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET"  >
-	
-		<input type="button" value="update" name="update">
+
+<form action="" method="GET"  >
+
+<label for="username">user name<label>
+<input type="text" id="username" name="username">
+<label for="password">password<label>
+<input type="text" id="password" name="password">		
 		
-		<input type="submit">
-	    </form>
-	</body>
-</html>
+<input type="submit" name="submit2">
+</form>
