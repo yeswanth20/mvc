@@ -14,12 +14,11 @@ $databasee = new database('localhost', 'root', 'vsspl');
 $databasee->connectdb();
 $databasee->select('bug_tracker');
 		
-class Model { 
-    public $text; 
-     public $id;
+class Model {
+	public $id;
     public function __construct() {
     	 
-        $this->text = 'Hello world!'; 
+       
     }
 	public function select($id)
 	{
@@ -46,20 +45,26 @@ class Model {
  
 		
 	} 
-	public function update_after($id)
+	public function update_after($data)
 	{
-	$query='UPDATE bugs SET description="'.$_POST['descp'].'",project="'.$_POST['project'].'",category="'.$_POST['category'].'",priority="'.$_POST['priority'].'"
-	,assigned_to="'.$_POST['assgn']. '"
-	,status="'.$_POST['status']. '"
-	 		WHERE ID="'.$id.'"';
-		echo $result = mysql_query($query);
 	
-   		while($row = mysql_fetch_assoc($result))
+		
+		
+	 $query='UPDATE bugs SET description="'.$data['cdescription'].'",project="'.$data['project'].'",category="'.$data['category'].'",priority="'.$data['priority'].'"
+	,assigned_to="'.$data['assgn']. '"
+	,status="'.$data['status']. '"
+	 		WHERE ID='.$data['id'].'';
+		if($result = mysql_query($query))
 		{
-			echo "sucess";
+			return "updated sucess";
 		}
-		return $row;
-        
+		else {
+			return "already updated";
+		}
+		
+		
+   	
+       
  
 		
 	} 
@@ -67,7 +72,7 @@ class Model {
 	
 	        
 } 
-
+//var_dump($_POST);
 
 
 
