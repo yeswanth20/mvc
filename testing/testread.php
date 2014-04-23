@@ -7,21 +7,38 @@ class UserTest extends PHPUnit_Framework_TestCase
 	public function testread()
 	{
 		
+	$_GET['username'] = 'priyanka';	
 		
 	$model = new Model();	
 	$controller=new Controller($model);
 	$view = new View($model,$controller);
-	$view->model_read();
-	
-	$mock = $this->getMock('View', array('model_read'));
+		
+	$this -> assertTrue ($view->model_read() == 'priya');
+
+
+	/*$mock = $this->getMock('View', array('model_read'));
 
         $mock
-            ->expects($this->exactly(0))
-            ->method('model_view')
-            ->with(0);
-			
-      
+            ->expects($this->any())
+			->method('model_view')
+            ->will($this->returnValue('foo'));
 
+        $this->assertEquals('foo', $view->model_read());*/
+	
 	}
+	
+	public function testinsert()
+	{
+		
+	$_GET['username'] = 'abcd';	
+	$_GET['password'] = 'ab';
+		
+	$model = new Model();	
+	$controller=new Controller($model);
+	$view = new View($model,$controller);
+		
+	$this -> assertTrue ($view->model_insert() == 'successfully inserted');
+	
+}
 }
 ?>

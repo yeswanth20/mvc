@@ -9,16 +9,12 @@ class View
       
    private $model; 
    private $controller;
-   
- 
-  
+     
     public function __construct(Model $model,Controller $controller) 
-    {   
-    	
+    {       	
         $this->model = $model; 
 		$this->controller=$controller;
     }
-   
    
     public function read_readtpl(){
     		$f=fopen("/var/www/mvc/view/view_read.tpl","r+");
@@ -45,11 +41,13 @@ class View
   
     }
 	
+	
 	public function model_read()
 	{
-	   	$text1=$_GET['username'];	  	
+		$text1=$_GET['username'];
 	   	$a=$this->model->read_data($text1);
 		echo "<h1>".$a."</h1>";
+		return $a;
 	 }
 	
 	public function model_insert()
@@ -58,6 +56,7 @@ class View
 	   $text3=$_GET['password'];
 	   $b=$this->model->insert_data($text2,$text3);
 	   echo "<h1>".$b."</h1>";
+	   return $b;
 	}
 	
 	

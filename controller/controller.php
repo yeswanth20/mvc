@@ -1,5 +1,5 @@
 <?php
-ini_set(display_error, 1);
+
 require_once "/var/www/mvc/view/view_base.php";
 require_once "/var/www/mvc/model/model.php";
 
