@@ -7,26 +7,26 @@ $databasee->select('bug_tracker');
 
 class Model
 {
-   // public $text;
+   public $uname;
 	
  
     //public function __construct(){
-    	public function read2($text)
+    	public function read_data($text1)
     	{
     	//var_dump('select* from login_users where UserName='.$text);
-		 $q=mysql_query('select * from login_users where UserName="'.$text.'"');
+		 $q=mysql_query('select * from login_users where UserName="'.$text1.'"');
 		 $row = mysql_fetch_assoc($q);
 		// while ($row = mysql_fetch_array ($q)) {
-		   echo $row['Password'];
+		   return $row['Password'];
         }
-		public function insert2($text2,$text3)
+		public function insert_data($text2,$text3)
     	{
     	
         $a=mysql_query("INSERT INTO login_users (UserName,Password) VALUES ('".$text2."','".$text3."')");   
         
         if(($a)==1)
 		{
-			echo "successfully inserted";
+			return"successfully inserted";
 		}
 		}
 }

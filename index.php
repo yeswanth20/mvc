@@ -1,7 +1,7 @@
 <?php
 require_once "/var/www/mvc/controller/controller.php";
 require_once "/var/www/mvc/model/model.php";
-require_once "/var/www/mvc/view/view_read.php";
+
 
 $model = new Model(); 
 $controller=new Controller($model);
