@@ -2,18 +2,20 @@
 
 <?php
 ini_set("display_errors",1);
-require_once "/var/www/mvc/models/model.php";
-require_once "/var/www/mvc/views/view.php";
-require_once "/var/www/mvc/controllers/controller.php";
+require_once "/home/bigc/newmvc1/mvc/models/model.php";
+require_once "/home/bigc/newmvc1/mvc/views/view.php";
+require_once "/home/bigc/newmvc1/mvc/controllers/controller.php";
 
 
 
 $model = new Model(); 
 //It is important that the controller and the view share the model 
 $controller = new Controller($model); 
-$view = new View($model); 
-echo '<a href="index.php?action=select">select</a><br>' ;
-echo '<a href="index.php?action=update">update</a><br>' ;
+$view = new View($model);
+echo '<a href="index.php?action=insert">Insert</a><br>' ; 
+echo '<a href="index.php?action=select">Select</a><br>' ;
+echo '<a href="index.php?action=update">Update</a><br>' ;
+echo '<a href="index.php?action=delete">Delete</a><br>' ;
  //$view->output();
   //echo $_GET['id'];
 if (isset($_GET['action'])) 

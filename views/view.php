@@ -1,7 +1,7 @@
 <?php
 ini_set("display_errors",1);
-require_once "/var/www/mvc/models/model.php";
-require_once "/var/www/mvc/controllers/controller.php";
+require_once "/home/bigc/newmvc1/mvc/models/model.php";
+require_once "/home/bigc/newmvc1/mvc/controllers/controller.php";
 $model=new Model();
 $controller;
 class View { 
@@ -16,7 +16,11 @@ class View {
     public function output($id) {
     	
 		$row=$this->model->update_before($id);
-		
+		if($id == ""){
+			echo "Please Enter the Valid ID";
+		}
+		else
+			{
 		echo '<form action="" method="post" name="update"><table >';
 		echo '<tr id=content><td>id:</td><td><input type="text" name="id" value="'. $row['ID'].'"/></td></tr>
 		<tr><td>description</td><td id="cdescription"><a id="mouse"><input type="text" name="cdescription"value="'.$row['description'].'"/></a></td></tr>
@@ -30,7 +34,7 @@ class View {
 	echo '</table><br>
 	<input type="submit" name="update"/>
 	</form>';
-	
+	}
 		
 	}
 	

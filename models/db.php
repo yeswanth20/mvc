@@ -22,6 +22,4 @@ class Database {
             OR die("There was a problem disconnecting from the database.");
     }
 }
-
-
 ?>
