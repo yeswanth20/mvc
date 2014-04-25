@@ -35,14 +35,12 @@ class Model {
 	public function select($id)
 	{
 		$result = mysql_query('SELECT * FROM bugs where ID='.$id);
+		
 		echo '<table >';
 		while($row = mysql_fetch_assoc($result))
 		{
-			echo '<tr><th>ID</th><th>Description</th><th>Project</th><th>category</th><th>Priority</th><th>Assigned To</th><th>Status</th></tr>';
-			echo '<tr id=content><td id="cid">'.$row['ID'].'</td><td id="cdescription"><a id="mouse">'
-			.$row['description'].'</a></td><td id="cproject">'.$row['project'].'</td><td id="ccategory">'
-			.$row['category'].'</td><td id="cpriority">'.$row['priority'].'</td><td id="cassignedto">'.
-			$row['assigned_to'].'</td><td id="cstatus">'.$row['status'].'</td></tr>';
+			include '/home/bigc/newmvc1/mvc/views/displaying1.php';	
+			
 		}
 		echo '</table>';
 	}
@@ -84,10 +82,7 @@ class Model {
 		while($row = mysql_fetch_assoc($rquery))
 		{
 			
-			echo '<tr id=content><td id="cid">'.$row['ID'].'</td><td id="cdescription"><a id="mouse">'
-			.$row['description'].'</a></td><td id="cproject">'.$row['project'].'</td><td id="ccategory">'
-			.$row['category'].'</td><td id="cpriority">'.$row['priority'].'</td><td id="cassignedto">'.
-			$row['assigned_to'].'</td><td id="cstatus">'.$row['status'].'</td></tr>';
+			include '/home/bigc/newmvc1/mvc/views/displaytable.php';
 		}
 		echo '</table>';
 	} 

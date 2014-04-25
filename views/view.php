@@ -21,25 +21,10 @@ class View {
 		}
 		else
 			{
-		echo '<form action="" method="post" name="update"><table >';
-		echo '<tr id=content><td>id:</td><td><input type="text" name="id" value="'. $row['ID'].'"/></td></tr>
-		<tr><td>description</td><td id="cdescription"><a id="mouse"><input type="text" name="cdescription"value="'.$row['description'].'"/></a></td></tr>
-		<tr><td>project</td><td id="cproject"><input type="text" name="project" value="'.$row['project'].'"/></td></tr>
-		<tr><td>category</td><td id="ccategory"><input type="text" name="category" value="'.$row['category'].'"/></td></tr>
-		<tr><td>prioirity</td><td id="cpriority"><input type="text" name="priority" value="'.$row['priority'].'"/></td></tr>
-		<tr><td>assigned</td><td id="cassignedto"><input type="text" name="assgn" value="'.$row['assigned_to'].'"/></td></tr>
-		<tr><td>status</td><td id="cstatus"><input type="text"  name="status" value="'.$row['status'].'"/></td></tr>';
-  
-    	
-	echo '</table><br>
-	<input type="submit" name="update"/>
-	</form>';
-	}
+				include '/home/bigc/newmvc1/mvc/views/displaying.php';
+		}
 		
 	}
-	
-	
-	
 }
 if(isset($_POST['update']))
 {
