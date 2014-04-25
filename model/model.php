@@ -10,10 +10,10 @@ class Model
    public $uname;
 	
  
-    //public function __construct(){
+   
     	public function read_data($text1)
     	{
-    	//var_dump('select* from login_users where UserName='.$text);
+    	
 		 $q=mysql_query('select * from login_users where UserName="'.$text1.'"');
 		 $row = mysql_fetch_assoc($q);
 		// while ($row = mysql_fetch_array ($q)) {
